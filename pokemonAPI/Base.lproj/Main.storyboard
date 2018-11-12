@@ -19,7 +19,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c0f-2y-SbQ">
-                                <rect key="frame" x="147.5" y="175" width="80" height="30"/>
+                                <rect key="frame" x="147.5" y="82" width="80" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="80" id="Hm2-uV-xJZ"/>
@@ -32,13 +32,13 @@
                                 </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Your pokemon information will appear here!" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="zrk-8e-1DN">
-                                <rect key="frame" x="0.0" y="262" width="375" height="405"/>
+                                <rect key="frame" x="0.0" y="205" width="375" height="462"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter Pokemon ID or Name here..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="37u-ZL-vhq">
-                                <rect key="frame" x="68" y="90" width="239.5" height="30"/>
+                                <rect key="frame" x="68" y="42" width="239.5" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
@@ -46,12 +46,14 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="c0f-2y-SbQ" firstAttribute="top" secondItem="37u-ZL-vhq" secondAttribute="bottom" constant="55" id="8D1-tX-8aK"/>
+                            <constraint firstItem="c0f-2y-SbQ" firstAttribute="top" secondItem="37u-ZL-vhq" secondAttribute="bottom" constant="48" id="6VK-w5-9Ox"/>
+                            <constraint firstItem="37u-ZL-vhq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="BBf-OQ-sv4"/>
+                            <constraint firstItem="37u-ZL-vhq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="22" id="Bwd-C2-wwI"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="zrk-8e-1DN" secondAttribute="trailing" id="Jd2-wN-zkC"/>
-                            <constraint firstItem="37u-ZL-vhq" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="70" id="P1y-Iz-w8g"/>
-                            <constraint firstItem="zrk-8e-1DN" firstAttribute="top" secondItem="c0f-2y-SbQ" secondAttribute="bottom" constant="57" id="Wip-Nf-r2Z"/>
+                            <constraint firstItem="zrk-8e-1DN" firstAttribute="top" secondItem="c0f-2y-SbQ" secondAttribute="bottom" constant="93" id="UwT-RL-ceD"/>
                             <constraint firstItem="zrk-8e-1DN" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="Yxg-t7-LDn"/>
                             <constraint firstItem="c0f-2y-SbQ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ZBr-wd-4NT"/>
+                            <constraint firstItem="c0f-2y-SbQ" firstAttribute="top" secondItem="37u-ZL-vhq" secondAttribute="bottom" constant="10" id="ckg-PS-dsx"/>
                             <constraint firstItem="37u-ZL-vhq" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ndl-dy-ofd"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="zrk-8e-1DN" secondAttribute="bottom" id="sg3-Ed-gOE"/>
                         </constraints>

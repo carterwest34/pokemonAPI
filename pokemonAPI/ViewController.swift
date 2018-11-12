@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var button: UIButton!
     @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var imageView: UIImageView!
     
     //setting up base url to be added to for call
     let pokemonAPIBaseUrl = "https://pokeapi.co/api/v2/pokemon/"
@@ -43,7 +44,8 @@ class ViewController: UIViewController {
             switch resonse.result {
             case .success(let value):
                 let json = JSON(value)
-                self.textView.text = json["name"].stringValue 
+                self.textView.text = json["name"].stringValue
+                
             case .failure(let error):
                 self.textView.text = "Invalid selection entered or error occured. Please try again."
                 print(error.localizedDescription)
