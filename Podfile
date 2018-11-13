@@ -9,5 +9,6 @@ target 'pokemonAPI' do
 
 pod 'Alamofire'
 pod 'SwiftyJSON'
+pod'SDWebImage'
 
 end

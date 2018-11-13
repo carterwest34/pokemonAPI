@@ -9,13 +9,14 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import SDWebImage
 
 class ViewController: UIViewController {
     
     //MARK: IBOutlets
     @IBOutlet weak var textField: UITextField!
     @IBOutlet weak var button: UIButton!
-    @IBOutlet weak var textView: UITextView!
+    @IBOutlet weak var pokemonLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
     
     //setting up base url to be added to for call
@@ -38,16 +39,34 @@ class ViewController: UIViewController {
         
         let pokemonNameComponent = pokemonTextField.replacingOccurrences(of: " ", with: "+")
         
-        let requestURL = pokemonAPIBaseUrl + pokemonNameComponent
         
-        Alamofire.request(requestURL).responseJSON { (resonse) in
+        let nameRequestURL = pokemonAPIBaseUrl + pokemonNameComponent
+       
+        
+        
+        
+        Alamofire.request(nameRequestURL).responseJSON { (resonse) in
             switch resonse.result {
             case .success(let value):
                 let json = JSON(value)
-                self.textView.text = json["name"].stringValue
-                
+                self.pokemonLabel.text = json["name"].stringValue
+                let pokemonID = json["id"].int
+                let imageRequestURL = URL(string: "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/\(String(pokemonID!)).png")
+                if let url = imageRequestURL{
+                    self.imageView.sd_setImage(with: url)
+                } else {
+                    let alertController = UIAlertController(title: "Pokemon Not Found", message: "Try Again.", preferredStyle: .alert)
+                    let alertAction = UIAlertAction(title: "Ok.", style: .default)
+                    alertController.addAction(alertAction)
+                    self.present(alertController, animated: true, completion: nil)
+                }
+                let pokemonType = json[""].string
             case .failure(let error):
-                self.textView.text = "Invalid selection entered or error occured. Please try again."
+                self.pokemonLabel.text = "Invalid selection entered or error occured. Please try again."
+                let alertController = UIAlertController(title: "Pokemon Not Found", message: "Try Again.", preferredStyle: .alert)
+                let alertAction = UIAlertAction(title: "Ok.", style: .default)
+                alertController.addAction(alertAction)
+                self.present(alertController, animated: true, completion: nil)
                 print(error.localizedDescription)
             }
         }
